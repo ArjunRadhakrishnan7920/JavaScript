@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("./clock.jpg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+h1{
+   
+    font-size: 4rem;
+    margin-top: 20rem;
+    
+}
+
+.countdown{
+    display: flex;
+} 
+
+.bigtext{
+    font-weight: bold;
+    font-size: 8rem;
+    line-height: 1;
+    margin: 0 2rem;
+}
+
+.countdown-e1{
+    text-align: center;
+    
+}
+
+.countdown-e1 span{
+   text-align: 1.3rem;
+   
+
+}
