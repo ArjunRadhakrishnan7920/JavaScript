@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript" language="javascript">
+
+    window.onload = function() {
+        document.getElementById("bu1").onmouseover = function()
+        {
+            this.style.backgroundColor = "#9933ff";
+        }
+
+        document.getElementById("bu2").onmouseout = function()
+        {
+            this.style.backgroundColor = "#9999ff";
+        }
+        document.getElementById("bu3").onclick = function()
+        {
+            this.style.backgroundColor = "#9999ff";
+        }
+        document.getElementById("bu4").ondblclick = function()
+        {
+            this.style.backgroundColor = "#9999ff";
+        }
+        
+    }
+    function func(x) {
+        document.getElementById(x).style.background = "red";
+    }
+
+   
+</script>
+
+<style>
+.b1 {
+    background-color:beige;
+    border-color: black;
+    color: black;
+    padding: 16px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    
+    
+  }
+ 
+   #fname{
+      padding: 16px 16px;
+  } 
+
+ 
+ </style> 
+
+
+  
+<body>
+    Mover<button class='b1' id='bu1'>MOUSEOVER</button>
+    Mout<button class='b1' id='bu2'>MOUSEOUT</button>    
+    Onclick<button class='b1' id='bu3'>ONCLICK</button>
+    Double<button class='b1' id='bu4'>ONDBLCLICK</button> 
+    Focus <input id="fname" type="text" onfocus="func(this.id)">
+    Blur<input type=text class='b1' onblur="this.value=this.value.toUpperCase()">
+
+
+</body>
+</html>
