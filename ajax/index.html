@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="populate">Populate Data</button>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Id
+                </td>
+                <td>Name</td>
+                <td>UserName</td>
+                <td>Email</td>
+            </tr>
+
+        </thead>
+        <tbody id="result_area">
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <script> 
+        var xhr=new XMLHttpRequest;
+        xhr.open("get","https://jsonplaceholder.typicode.com/users");
+       // xhr.send();
+       document.getElementById("populate").addEventListener("click",function(){
+           xhr.send();
+       })
+        
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    //alert(xhr.responseText);
+                    var result_data=JSON.parse(xhr.responseText);
+                    var html_content="";
+                    for(i=0;i<result_data.length;i++){
+                        var current_record=result_data[i];
+                        //console.log(current_record);
+                        html_content=html_content+"<tr><td>"+current_record.id+"</td><td>"+current_record.name+"</td><td>"+current_record.username+"</td><td>"+current_record.email+"</td></tr>"
+                    }
+
+                    document.getElementById("result_area").innerHTML=html_content;
+
+
+
+                }else{
+                    alert("error");
+                }}
+        }
+        
+    
+    </script>
+</body>
+</html>
+
+
